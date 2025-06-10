@@ -1,0 +1,31 @@
+workflows:
+  build-nova:
+    name: Build Nova APK
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      vars:
+        KEYSTORE_PATH: keystore/nova-release.keystore
+        KEYSTORE_PASSWORD: NovaSecure123
+        KEY_ALIAS: nova_key
+        KEY_PASSWORD: NovaKey123
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: "*"
+          include: true
+          source: true
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter pub get
+      - name: Build APK
+        script: |
+          flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com

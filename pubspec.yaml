@@ -1,0 +1,38 @@
+name: nova
+description: A futuristic voice assistant built with Flutter
+publish_to: "none" 
+version: 0.9.0+1
+
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  speech_to_text: ^7.0.0
+  flutter_tts: ^4.0.2
+  provider: ^6.1.2
+  permission_handler: ^11.3.1
+  http: ^1.2.1
+  url_launcher: ^6.2.5
+  shared_preferences: ^2.2.3
+  connectivity_plus: ^5.0.2
+  battery_plus: ^4.1.0
+  flutter_local_notifications: ^17.0.0
+  device_info_plus: ^10.1.0
+  intl: ^0.19.0
+  package_info_plus: ^5.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/audio/
+    - assets/images/
